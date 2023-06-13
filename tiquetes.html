@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./testaereo.css" />
+  <title>SIMULACRO3</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark m-1">
+    <div class="container-fluid">
+      <a class="navbar-brand">AVIONETAS CAMPUS<i class="fa-solid fa-plane fa-2xl mx-3" style="color: #c5c9ce;"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars" style="color: #1a5fb4"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0    mx-auto">
+          <li class="nav-item">
+            <a href="testaereo.html">
+              <button class="btn btn-primary m-2" type="button" >Gestión de clientes</button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="rutas.html">
+              <button class="btn btn-primary m-2" type="button">Gestión de rutas aéreas</button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="tiquetes.html">
+              <button class="btn btn-primary m-2" type="button">Compra de tiquetes</button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="puntos.html">
+              <button class="btn btn-primary m-2" type="button">Puntos de fidelidad</button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <table class="table table-dark table-striped" id="esconder_c">
+      <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Numero de cedula</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Nacionalidad</th>
+            <th scope="col">Fecha de nacimiento</th>
+          </tr>
+      </thead>
+      <tbody id="tabla_c"></tbody>
+    </table>
+    <table class="table table-dark table-striped" id="esconder_r">
+      <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Vuelo</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Ciudad de Origen</th>
+            <th scope="col">Ciudad de Destino</th>
+            <th scope="col">Puntos de fidelidad extra</th>
+            <th scope="col"></th>
+          </tr>
+      </thead>
+      <tbody id="tabla_r"></tbody>
+    </table>
+    <div class="text-center py-2 px-4">
+      <button type="button" class="btn btn-primary m-4" id="clientes1">
+        Clientes
+      </button>
+      <button type="button" class="btn btn-primary m-4" id="rutas1">
+        vuelos
+      </button>
+      <button type="button" class="btn btn-primary m-4" data-bs-toggle="modal" data-bs-target="#Modal1">
+        Cotizar tiquete
+      </button>
+    </div>
+    <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="ModalLabel1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="ModalLabel1">Comprar Tiquete<i class="fa-regular fa-money-bill-1 fa-lg mx-2" style="color: #0d4ebf;"></i></h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3">
+              <div class="col-md-6">
+                <label for="validationDefault01" class="form-label">Codigo del vuelo</label>
+                <input type="text" class="form-control" id="cod_vuelo" value="" required />
+              </div>
+              <div class="col-md-6">
+                <label for="validationDefault02" class="form-label">Codigo del cliente</label>
+                <input type="text" class="form-control" id="cod_cliente" value="" required />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal"
+            data-bs-target="#Modal2" id="cotizar1">Cotizar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="ModalLabel1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="ModalLabel1">Nuevo Usuario<i class="fa-solid fa-user fa-lg mx-2"
+                style="color: #124caf;"></i></h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row g-3 was-validation">
+              <div class="col-md-6">
+                <label class="form-label">Nombres</label>
+                <input type="text" class="form-control" id="nombres1" value="" required />
+                <div class="valid-feedback">Valid.</div>     <div class="invalid-feedback">Please fill out this field.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="apellidos1" value="" required />
+              </div>
+              <div class="col-md-12">
+                <label class="form-label">Correo</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" id="correo1" required />
+                  <span class="input-group-text" id="basic-addon2">ejemplo@ejemplo.com</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Numero de cedula</label>
+                <input type="text" class="form-control" id="cedula1" required />
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Telefono</label>
+                <input type="text" class="form-control" id="telefono1" required />
+              </div>
+              <label class="form-label">Nacionalidad</label>
+              <input class="form-control" list="datalistOptions" id="nacionalidad1" required />
+              <datalist class="desplegable" id="datalistOptions">
+                <option value="Pastuso"></option>
+                <option value="Chino"></option>
+                <option value="Gringo"></option>
+                <option value="Veneco"></option>
+                <option value="Colombiano"></option>
+              </datalist>
+
+              <div class="col-md-12">
+                <label class="form-label">Fecha de nacimiento</label>
+                <div class="col-5">
+                  <input type="date" class="form-control" id="fecha1" required />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="agregar1" data-bs-dismiss="modal">Guardar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="ModalLabel2" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="ModalLabel2">COTIZACION DEL TIQUETE: </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="tiquet"><p>PORFAVOR INGRESA LOS ID DEL VUELO Y CLIENTE</p></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger m-4" data-bs-dismiss="modal" id="pagar1">Pagar</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="./js/tiquetes.js"></script>
+  <script src="https://kit.fontawesome.com/755229d5b0.js" crossorigin="anonymous"></script>
+</body>
+</html>
